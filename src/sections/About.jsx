@@ -59,7 +59,9 @@ export default function About() {
             <div className="about-cta-wrap">
               <a
                 href={`${import.meta.env.BASE_URL}resume.pdf`}
-                download="Chinmay_Neema_Resume.pdf"
+                download="resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-primary"
                 aria-label="Download Chinmay Neema's resume PDF"
               >

@@ -162,7 +162,10 @@ export default function Hero() {
                 alt="Professional photo of Chinmay Neema"
                 className="hero-photo"
                 loading="eager"
-                onError={() => setPhotoError(true)}
+                onError={(e) => {
+                  console.error('Failed to load profile photo at:', `${import.meta.env.BASE_URL}images/profile-photo.png`, e);
+                  setPhotoError(true);
+                }}
               />
             ) : (
               <div className="hero-photo-placeholder" aria-label="Profile photo placeholder — add your photo at public/images/profile-photo.png">

@@ -98,7 +98,9 @@ export default function Navbar() {
           <div className="navbar-actions">
             <a
               href={`${import.meta.env.BASE_URL}resume.pdf`}
-              download="Chinmay_Neema_Resume.pdf"
+              download="resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-primary navbar-resume-btn"
               aria-label="Download Chinmay Neema's resume PDF"
             >
@@ -157,7 +159,9 @@ export default function Navbar() {
           ))}
           <a
             href={`${import.meta.env.BASE_URL}resume.pdf`}
-            download="Chinmay_Neema_Resume.pdf"
+            download="resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary navbar-mobile-resume"
             onClick={() => setMenuOpen(false)}
           >
