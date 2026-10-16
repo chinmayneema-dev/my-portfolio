@@ -1,0 +1,129 @@
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+.about-section {
+  background: linear-gradient(180deg, var(--color-bg) 0%, rgba(23, 21, 38, 0.3) 100%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+/* Bio */
+.about-bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.about-text {
+  font-size: var(--text-lg);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+}
+
+.about-text strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* Facts panel */
+.about-facts {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-6));
+  box-shadow: var(--shadow-card);
+}
+
+.about-facts-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+
+.about-facts-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.about-fact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.about-fact-icon {
+  font-size: 1.2em;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-fact-label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: var(--font-mono);
+  margin-bottom: 2px;
+}
+
+.about-fact-value {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.about-cta-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.about-cta-wrap .btn {
+  justify-content: center;
+  width: 100%;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+  .about-facts {
+    position: static;
+  }
+  .about-cta-wrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .about-cta-wrap .btn {
+    width: auto;
+    flex: 1;
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-text {
+    font-size: var(--text-base);
+  }
+}

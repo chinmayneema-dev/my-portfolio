@@ -1,0 +1,181 @@
+/* ============================================================
+   PROJECTS SECTION
+   ============================================================ */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-6);
+}
+
+/* Project card */
+.project-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  border-color: rgba(139, 114, 255, 0.35);
+  box-shadow: var(--shadow-card), var(--glow-purple);
+  transform: translateY(-4px);
+}
+
+.project-card--planned {
+  border-color: rgba(255, 196, 0, 0.2);
+  background: linear-gradient(135deg, var(--color-surface) 0%, rgba(255, 196, 0, 0.03) 100%);
+}
+
+.project-card--planned:hover {
+  border-color: rgba(255, 196, 0, 0.4);
+  box-shadow: var(--shadow-card), 0 0 30px rgba(255, 196, 0, 0.1);
+}
+
+/* Color bar */
+.project-card-bar {
+  height: 3px;
+  width: 100%;
+}
+
+.project-card-bar--purple {
+  background: linear-gradient(90deg, var(--color-accent-purple), transparent);
+}
+
+.project-card-bar--teal {
+  background: linear-gradient(90deg, var(--color-accent-teal), transparent);
+}
+
+.project-card-bar--planned {
+  background: linear-gradient(90deg, #FFC400, transparent);
+}
+
+/* Inner content */
+.project-card-inner {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  flex: 1;
+}
+
+/* Header */
+.project-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.project-card-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.project-title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+/* GitHub link */
+.project-github-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-muted);
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+  border: 1px solid transparent;
+}
+
+.project-github-link:hover {
+  color: var(--color-accent-purple);
+  border-color: var(--color-accent-purple);
+  background: var(--color-accent-purple-dim);
+}
+
+.project-no-repo {
+  color: var(--color-text-muted);
+  opacity: 0.4;
+  padding: var(--space-2);
+}
+
+/* Description */
+.project-description {
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+/* Planned note */
+.project-planned-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(255, 196, 0, 0.07);
+  border: 1px solid rgba(255, 196, 0, 0.2);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  color: #e6b000;
+  line-height: 1.5;
+}
+
+.project-planned-note svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Features */
+.project-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.project-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.project-feature svg {
+  flex-shrink: 0;
+  color: var(--color-accent-teal);
+  margin-top: 3px;
+}
+
+/* Tech badges */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+/* Actions */
+.project-actions {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
