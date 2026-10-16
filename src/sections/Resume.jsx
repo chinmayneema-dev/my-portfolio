@@ -43,7 +43,7 @@ export default function Resume() {
 
           <div className="resume-actions">
             <a
-              href="/resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
               download="Chinmay_Neema_Resume.pdf"
               className="btn btn-primary btn-lg"
               aria-label="Download Chinmay Neema's resume as a PDF file"
@@ -56,7 +56,7 @@ export default function Resume() {
               Download Resume
             </a>
             <a
-              href="/resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary btn-lg"

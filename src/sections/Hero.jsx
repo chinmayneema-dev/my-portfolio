@@ -13,6 +13,7 @@ export default function Hero() {
   const [strIndex, setStrIndex]     = useState(0);
   const [charIndex, setCharIndex]   = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [photoError, setPhotoError] = useState(false);
 
   useEffect(() => {
     // Respect reduced motion preference
@@ -155,23 +156,23 @@ export default function Hero() {
           <div className="hero-photo-ring" aria-hidden="true" />
           <div className="hero-photo-glow" aria-hidden="true" />
           <div className="hero-photo-container">
-            <img
-              src="/images/profile-photo.png"
-              alt="Professional photo of Chinmay Neema"
-              className="hero-photo"
-              loading="eager"
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'flex';
-              }}
-            />
-            <div className="hero-photo-placeholder" style={{ display: 'none' }} aria-label="Profile photo placeholder — add your photo at public/images/profile-photo.png">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-              <span>Add your photo at<br/>public/images/profile-photo.png</span>
-            </div>
+            {!photoError ? (
+              <img
+                src={`${import.meta.env.BASE_URL}images/profile-photo.png`}
+                alt="Professional photo of Chinmay Neema"
+                className="hero-photo"
+                loading="eager"
+                onError={() => setPhotoError(true)}
+              />
+            ) : (
+              <div className="hero-photo-placeholder" aria-label="Profile photo placeholder — add your photo at public/images/profile-photo.png">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span>Add your photo at<br/>public/images/profile-photo.png</span>
+              </div>
+            )}
           </div>
         </div>
       </div>
